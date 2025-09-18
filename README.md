@@ -13,9 +13,8 @@
 
 # Circuit Diagram:
 
----
-To upload
---
+![WhatsApp Image 2025-09-18 at 13 23 54_1d451c05](https://github.com/user-attachments/assets/d577cbee-ab2c-48fe-bb9e-c048b0193a46)
+
 
 # Procedure // Modify the procedure based on your circuit
 
@@ -56,13 +55,43 @@ Step 7: Save Your Work
 
 
 # Program
+```
+void setup()
+{
+  pinMode(12,OUTPUT);
+  pinMode(13,OUTPUT);
+  pinMode(A0,INPUT);
+  Serial.begin(9600);
 
----
-To upload
---
+}
+
+void loop()
+{
+  float value=analogRead(A0);
+  float temperatureC=((((value*5)/1023)-0.5)*100);
+  Serial.println("temperature");
+  Serial.println(temperatureC);
+  
+  if(temperatureC > 20)
+  {
+    digitalWrite(12,HIGH);
+    digitalWrite(13,LOW);
+  }
+  else
+  {
+    digitalWrite(12,LOW);
+    digitalWrite(13,LOW);
+  }
+}
+```
+# output
+
+
+
+https://github.com/user-attachments/assets/3d1669b5-bb4b-4176-9c66-4d78edd02f8e
+
 
 # Result
+Thus the measure the Temperature using DHT11/DHT22/TMP36  sensor with Arduino UNO Board/ESP-32 using Tinker CAD.
 
----
-To upload
---
+
